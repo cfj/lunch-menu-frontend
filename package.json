@@ -1,0 +1,12 @@
+{
+  "name": "lunch-frontend",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathan Svärdén",
+  "license": "MIT"
+}

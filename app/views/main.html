@@ -1,7 +1,7 @@
 <div>
     <div ng-hide="vm.isLoaded">loading...</div>
     <div ng-show="vm.isLoaded" ng-hide="vm.isWeekend">
-        <div ng-repeat="m in vm.todaysMenu" class="test">
+        <div ng-repeat="m in vm.todaysMenu" class="restaurant-panel">
             <h2>{{m.restaurant}}</h2>
             <div>{{m.dish}}</div>
         </div>

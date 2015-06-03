@@ -4,19 +4,23 @@
 
 body {
   background: rgb(241, 241, 241);
+  color: #4C4C4C;
   line-height: 1.5;
   margin: 0 auto;
   width: 96%;
   padding-bottom: 0px;
   max-width: 1180px;
+
+  font-family: Open Sans, Helvetica, Arial, sans-serif;
 }
 
-.test {
+.restaurant-panel {
   display: inline-block;
   vertical-align: top;
   padding: 10px;
   margin: 0;
-  width: 20%;
+  width: 100%;
+  font-size: .9em;
 }
 
 .heading {
@@ -27,4 +31,10 @@ body {
   padding: 20px;
   background: rgb(255, 255, 255);
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+@media screen and (min-width: 960px) {
+  .restaurant-panel {
+    width: 20%;
+  }
 }

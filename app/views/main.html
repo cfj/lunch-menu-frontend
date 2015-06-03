@@ -1,12 +1,10 @@
 <div>
     <div ng-hide="vm.isLoaded">loading...</div>
     <div ng-show="vm.isLoaded" ng-hide="vm.isWeekend">
-        <ul>
-            <li ng-repeat="m in vm.todaysMenu">
-                <h2>{{m.restaurant}}</h2>
-                <div>{{m.dish}}</div>
-            </li>
-        </ul>
+        <div ng-repeat="m in vm.todaysMenu" class="test">
+            <h2>{{m.restaurant}}</h2>
+            <div>{{m.dish}}</div>
+        </div>
     </div>
     <div ng-show="vm.isWeekend">
         Nästa veckas menyer har inte hämtats än.

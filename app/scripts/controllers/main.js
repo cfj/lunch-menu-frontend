@@ -4,17 +4,24 @@ angular.module('lunchFrontendApp').controller('MainCtrl', function (menuService)
     var vm = this;
     var today = new Date().getDay() - 1;
     var todaysMenu = [];
+    var isWeekend = today > 4;
 
-    menuService.getMenus().then(function (response) {
-        var menus = response.data;
+    vm.isLoaded = false;
+    vm.isWeekend = isWeekend;
 
-        angular.forEach(Object.getOwnPropertyNames(menus), function (name) {
-            todaysMenu.push({
-                restaurant: name,
-                dish: menus[name][today]
+    if(!isWeekend) {
+        menuService.getMenus().then(function (response) {
+            var menus = response.data;
+
+            angular.forEach(Object.getOwnPropertyNames(menus), function (name) {
+                todaysMenu.push({
+                    restaurant: name,
+                    dish: menus[name][today]
+                });
             });
-        });
 
-        vm.todaysMenu = todaysMenu;
-    });
+            vm.isLoaded = true;
+            vm.todaysMenu = todaysMenu;
+        });
+    }
 });

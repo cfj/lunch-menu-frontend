@@ -14,6 +14,15 @@ body {
   font-family: Open Sans, Helvetica, Arial, sans-serif;
 }
 
+a {
+  color: rgb(52, 152, 219);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .restaurant-panel {
   display: inline-block;
   vertical-align: top;
@@ -33,8 +42,25 @@ body {
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
+.links {
+  text-align: center;
+  font-size: .8em;
+  margin: 10px 0;
+}
+
+.links img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 4px;
+}
+
 @media screen and (min-width: 960px) {
   .restaurant-panel {
     width: 20%;
+  }
+
+  .links {
+    text-align: right;
   }
 }

@@ -30,6 +30,7 @@ angular.module('lunchFrontendApp').controller('MainCtrl', function (menuService)
     if(!isWeekend) {
         menuService.getMenus()
         .then(getTodaysMenu)
-        .then(populateViewModel);
+        .then(populateViewModel)
+        .catch(console.log.bind(console));
     }
 });

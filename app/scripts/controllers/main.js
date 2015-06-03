@@ -3,25 +3,33 @@
 angular.module('lunchFrontendApp').controller('MainCtrl', function (menuService) {
     var vm = this;
     var today = new Date().getDay() - 1;
-    var todaysMenu = [];
     var isWeekend = today > 4;
 
     vm.isLoaded = false;
     vm.isWeekend = isWeekend;
 
-    if(!isWeekend) {
-        menuService.getMenus().then(function (response) {
-            var menus = response.data;
+    function getTodaysMenu (data) {
+        var weekMenus = data.data;
+        var todaysMenu = [];
 
-            angular.forEach(Object.getOwnPropertyNames(menus), function (name) {
-                todaysMenu.push({
-                    restaurant: name,
-                    dish: menus[name][today]
-                });
+        Object.getOwnPropertyNames(weekMenus).forEach(function (name) {
+            todaysMenu.push({
+                restaurant: name,
+                dish: weekMenus[name][today]
             });
-
-            vm.isLoaded = true;
-            vm.todaysMenu = todaysMenu;
         });
+
+        return todaysMenu;
+    }
+
+    function populateViewModel (menu) {
+        vm.isLoaded = true;
+        vm.todaysMenu = menu;
+    }
+
+    if(!isWeekend) {
+        menuService.getMenus()
+        .then(getTodaysMenu)
+        .then(populateViewModel);
     }
 });

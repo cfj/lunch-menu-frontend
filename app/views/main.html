@@ -1,5 +1,7 @@
 <div>
-    <div ng-hide="vm.isLoaded">loading...</div>
+    <div ng-hide="vm.isLoaded" class="loading-icon">
+        <img src="images/ring.svg">
+    </div>
     <div ng-show="vm.isLoaded" ng-hide="vm.isWeekend">
         <div ng-repeat="m in vm.todaysMenu" class="restaurant-panel">
             <h2><a ng-href="{{m.url}}">{{m.restaurant}}</a></h2>

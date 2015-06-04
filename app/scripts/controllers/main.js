@@ -9,13 +9,14 @@ angular.module('lunchFrontendApp').controller('MainCtrl', function (menuService)
     vm.isWeekend = isWeekend;
 
     function getTodaysMenu (data) {
-        var weekMenus = data.data;
+        var restaurants = data.data;
         var todaysMenu = [];
-
-        Object.getOwnPropertyNames(weekMenus).forEach(function (name) {
+        
+        Object.getOwnPropertyNames(restaurants).forEach(function (name) {
             todaysMenu.push({
                 restaurant: name,
-                dish: weekMenus[name][today]
+                dish: restaurants[name].menu[today],
+                url: restaurants[name].url
             });
         });
 

@@ -14,6 +14,15 @@ body {
   font-family: Open Sans, Helvetica, Arial, sans-serif;
 }
 
+.container {
+  animation-name: fadein;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: .5s;
+  -webkit-animation-iteration-count: 1;
+}
+
 a {
   color: rgb(52, 152, 219);
   text-decoration: none;
@@ -21,6 +30,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+h2 {
+  font-weight: 700;
 }
 
 .restaurant-panel {
@@ -79,4 +92,60 @@ a:hover {
     text-align: left;
     width: 50%;
   }
+}
+
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+        -webkit-transform: translateY(-40px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px)
+    }
+}
+
+@-moz-keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+        -webkit-transform: translateY(-40px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px)
+    }
+}
+
+@-o-keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+        -webkit-transform: translateY(-40px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px)
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+        -webkit-transform: translateY(-40px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px)
+    }
 }

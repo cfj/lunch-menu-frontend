@@ -18,7 +18,7 @@
       <div class="main" ng-view></div>
 
       <footer>
-          <div class="last-updated">
+          <div class="last-updated" ng-hide="vm.isWeekend">
               Senast uppdaterad {{vm.lastUpdated | date : 'yyyy-MM-dd'}}
           </div>
           <div class="github">

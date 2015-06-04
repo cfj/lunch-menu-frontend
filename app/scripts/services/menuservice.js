@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lunchFrontendApp').factory('menuService', function ($http) {
-    var apiUrl = 'http://localhost:8081'
+    var apiUrl = 'http://localhost:8080'
 
     return {
         getMenus: function () {

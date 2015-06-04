@@ -32,8 +32,12 @@ a:hover {
   text-decoration: underline;
 }
 
-h2 {
-  font-weight: 700;
+h1 {
+  font-size: 2.4em;
+}
+
+h1, h2 {
+  font-weight: 300;
 }
 
 .loading-icon {

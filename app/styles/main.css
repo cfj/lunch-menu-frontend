@@ -4,7 +4,7 @@
 
 body {
   background: rgb(241, 241, 241);
-  color: #4C4C4C;
+  color: rgb(76, 76, 76);
   line-height: 1.5;
   margin: 0 auto;
   width: 96%;
@@ -32,6 +32,10 @@ a:hover {
   font-size: .9em;
 }
 
+.restaurant-panel a {
+    color: rgb(41, 128, 185);
+}
+
 .heading {
   height: 50px;
 }
@@ -43,7 +47,6 @@ a:hover {
 }
 
 .links {
-  text-align: center;
   font-size: .8em;
   margin: 10px 0;
 }
@@ -55,12 +58,25 @@ a:hover {
   top: 4px;
 }
 
+.github, .last-updated {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
 @media screen and (min-width: 960px) {
   .restaurant-panel {
     width: 20%;
   }
 
-  .links {
+  .github {
+    float: right;
     text-align: right;
+    width: 50%;
+  }
+
+  .last-updated {
+    text-align: left;
+    width: 50%;
   }
 }

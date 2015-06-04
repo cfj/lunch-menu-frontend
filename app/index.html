@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   </head>
-  <body ng-app="lunchFrontendApp">
+  <body ng-app="lunchFrontendApp" ng-controller="MainCtrl as vm">
 
       <div>
         <h1>Dagens lunch</h1>
@@ -17,9 +17,14 @@
       <div class="main" ng-view></div>
 
       <footer class="links">
-        <img src="images/GitHub.png" alt="GitHub logo">
-        <a href="https://github.com/cfj/lunch-menu-scraper">Scraper</a> |
-        <a href="https://github.com/cfj/lunch-menu-frontend">Frontend</a>
+          <div class="last-updated">
+              Senast uppdaterad {{vm.lastUpdated | date : 'yyyy-MM-dd'}}
+          </div>
+          <div class="github">
+            <img src="images/GitHub.png" alt="GitHub logo">
+            <a href="https://github.com/cfj/lunch-menu-scraper">Scraper</a> |
+            <a href="https://github.com/cfj/lunch-menu-frontend">Frontend</a>  
+          </div>
       </footer>
 
     </div>

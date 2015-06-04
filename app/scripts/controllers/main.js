@@ -9,9 +9,10 @@ angular.module('lunchFrontendApp').controller('MainCtrl', function (menuService)
     vm.isWeekend = isWeekend;
 
     function getTodaysMenu (data) {
-        var restaurants = data.data;
+        var restaurants = data.data.restaurants;
+        var lastUpdated = data.data.updated;
         var todaysMenu = [];
-        
+
         Object.getOwnPropertyNames(restaurants).forEach(function (name) {
             todaysMenu.push({
                 restaurant: name,
@@ -20,12 +21,16 @@ angular.module('lunchFrontendApp').controller('MainCtrl', function (menuService)
             });
         });
 
-        return todaysMenu;
+        return {
+            todaysMenu: todaysMenu,
+            lastUpdated: lastUpdated
+        };
     }
 
-    function populateViewModel (menu) {
+    function populateViewModel (data) {
         vm.isLoaded = true;
-        vm.todaysMenu = menu;
+        vm.todaysMenu = data.todaysMenu;
+        vm.lastUpdated = data.lastUpdated;
     }
 
     if(!isWeekend) {

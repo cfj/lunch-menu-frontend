@@ -34,10 +34,24 @@ a:hover {
 
 h1 {
   font-size: 2.4em;
+  display: inline-block;
 }
 
 h1, h2 {
   font-weight: 300;
+}
+
+select {
+  border: 0;
+  background: rgba(0,0,0,0);
+  font-size: 1.3em;
+  font-weight: 300;
+  color: rgb(76, 76, 76);
+  outline: none;
+}
+
+option {
+  background: transparent;
 }
 
 .loading-icon {

@@ -7,35 +7,36 @@ angular.module('lunchFrontendApp').controller('MainCtrl', function (menuService)
 
     vm.isLoaded = false;
     vm.isWeekend = isWeekend;
+    vm.today = today;
 
-    function getTodaysMenu (data) {
+    function getWeeklyMenu (data) {
         var restaurants = data.data.restaurants;
         var lastUpdated = data.data.updated;
-        var todaysMenu = [];
+        var weeklyMenu = [];
 
         Object.getOwnPropertyNames(restaurants).forEach(function (name) {
-            todaysMenu.push({
+            weeklyMenu.push({
                 restaurant: name,
-                dish: restaurants[name].menu[today],
+                menu: restaurants[name].menu,
                 url: restaurants[name].url
             });
         });
 
         return {
-            todaysMenu: todaysMenu,
+            weeklyMenu: weeklyMenu,
             lastUpdated: lastUpdated
         };
     }
 
     function populateViewModel (data) {
         vm.isLoaded = true;
-        vm.todaysMenu = data.todaysMenu;
+        vm.weeklyMenu = data.weeklyMenu;
         vm.lastUpdated = data.lastUpdated;
     }
 
     if(!isWeekend) {
         menuService.getMenus()
-        .then(getTodaysMenu)
+        .then(getWeeklyMenu)
         .then(populateViewModel)
         .catch(console.log.bind(console));
     }

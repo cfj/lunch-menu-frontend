@@ -1,14 +1,26 @@
 <div>
-    <div ng-hide="vm.isWeekend || vm.isLoaded" class="loading-icon">
-        <img src="images/ring.svg">
+    <div>
+      <h1>Dagens lunch</h1>
+      <select ng-model="vm.today">
+        <option value="0">Måndag</option>
+        <option value="1">Tisdag</option>
+        <option value="2">Onsdag</option>
+        <option value="3">Torsdag</option>
+        <option value="4">Fredag</option>
+      </select>
     </div>
-    <div ng-show="vm.isLoaded && !vm.isWeekend">
-        <div ng-repeat="m in vm.todaysMenu" class="restaurant-panel">
-            <h2><a ng-href="{{m.url}}">{{m.restaurant}}</a></h2>
-            <div>{{m.dish}}</div>
+    <div class="main">
+        <div ng-hide="vm.isWeekend || vm.isLoaded" class="loading-icon">
+            <img src="images/ring.svg">
         </div>
-    </div>
-    <div ng-show="vm.isWeekend">
-        Nästa veckas menyer har inte hämtats än.
+        <div ng-show="vm.isLoaded && !vm.isWeekend">
+            <div ng-repeat="m in vm.weeklyMenu" class="restaurant-panel">
+                <h2><a ng-href="{{m.url}}">{{m.restaurant}}</a></h2>
+                <div>{{m.menu[vm.today]}}</div>
+            </div>
+        </div>
+        <div ng-show="vm.isWeekend">
+            Nästa veckas menyer har inte hämtats än.
+        </div>
     </div>
 </div>

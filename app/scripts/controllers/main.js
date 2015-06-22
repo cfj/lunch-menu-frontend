@@ -3,7 +3,7 @@
 angular.module('lunchFrontendApp').controller('MainCtrl', function (menuService) {
     var vm = this;
     var today = new Date().getDay() - 1;
-    var isWeekend = today > 4;
+    var isWeekend = today > 4 || today <= -1;
 
     vm.isLoaded = false;
     vm.isWeekend = isWeekend;

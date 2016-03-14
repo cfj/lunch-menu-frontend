@@ -16,7 +16,7 @@
         <div ng-show="vm.isLoaded && !vm.isWeekend">
             <div ng-repeat="m in vm.weeklyMenu" class="restaurant-panel">
                 <h2><a ng-href="{{m.url}}">{{m.restaurant}}</a></h2>
-                <div>{{m.menu[vm.today]}}</div>
+                <div ng-bind-html="m.menu[vm.today]"></div>
             </div>
         </div>
         <div ng-show="vm.isWeekend">

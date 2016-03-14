@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('lunchFrontendApp').controller('MainCtrl', function (menuService) {
+angular.module('lunchFrontendApp').controller('MainCtrl', function ($sanitize, menuService) {
     var vm = this;
     var today = new Date().getDay() - 1;
     var isWeekend = today > 4 || today <= -1;

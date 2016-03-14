@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('lunchFrontendApp', ['ngRoute'])
+    .module('lunchFrontendApp', ['ngRoute', 'ngSanitize'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
         .when('/', {

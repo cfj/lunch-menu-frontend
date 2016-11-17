@@ -81,6 +81,12 @@ option {
   height: 50px;
 }
 
+.map-button img {
+    width: 32px;
+    float: right;
+    opacity: 1;
+}
+
 .main {
   padding: 20px;
   background: rgb(255, 255, 255);
@@ -110,6 +116,10 @@ footer img {
     width: 20%;
   }
 
+  .restaurant-panel:hover img {
+    opacity: 1;
+  }
+
   .github {
     float: right;
     text-align: right;
@@ -119,6 +129,14 @@ footer img {
   .last-updated {
     text-align: left;
     width: 50%;
+  }
+
+  .map-button img {
+    float: none;
+    width: 20px;
+    position: relative;
+    top: 3px;
+    opacity: 0.1;
   }
 }
 

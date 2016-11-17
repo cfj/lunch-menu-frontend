@@ -18,7 +18,8 @@ angular.module('lunchFrontendApp').controller('MainCtrl', function ($sanitize, m
             weeklyMenu.push({
                 restaurant: name,
                 menu: restaurants[name].menu,
-                url: restaurants[name].url
+                url: restaurants[name].url,
+                mapUrl: restaurants[name].mapUrl
             });
         });
 

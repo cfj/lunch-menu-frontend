@@ -15,7 +15,10 @@
         </div>
         <div ng-show="vm.isLoaded && !vm.isWeekend">
             <div ng-repeat="m in vm.weeklyMenu" class="restaurant-panel">
-                <h2><a ng-href="{{m.url}}">{{m.restaurant}}</a></h2>
+                <h2>
+                    <a ng-href="{{m.url}}">{{m.restaurant}}</a>
+                    <a ng-href="{{m.mapUrl}}" class="map-button" target="_blank"><img src="images/google-maps-icon.png"></a>
+                </h2>
                 <div ng-bind-html="m.menu[vm.today]"></div>
             </div>
         </div>
